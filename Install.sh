@@ -23,4 +23,10 @@ sudo dnf update -y
 sudo dnf config-manager --set-enabled crb
 sudo dnf -y groupinstall "KDE Plasma Workspaces" "base-x"
 sudo systemctl set-default graphical
+#Qemu
+sudo dnf makecache --refresh
+sudo dnf -y install edk2-ovmf
+ sudo dnf install qemu-kvm qemu-img libvirt virt-manager virt-install virt-viewer libvirt-client
+ sudo systemctl start libvirtd
+ sudo systemctl enable libvirtd
 sudo reboot
