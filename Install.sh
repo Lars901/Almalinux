@@ -15,7 +15,8 @@ wget http://mirror.stream.centos.org/9-stream/AppStream/x86_64/os/Packages/googl
 sudo dnf install -y google-noto-emoji-fonts
 sudo mkdir ~/.config/fontsconfig
 sudo cp 01-emoji.conf ~/.config/fontconfig/conf.d/01-emoji.conf
-
+#LibreOffice
+sudo dnf install -y libreoffice-writer libreoffice-calc libreoffice-impress
 #Drivers
 wget https://repo.radeon.com/amdgpu-install/22.40.3/rhel/9.1/amdgpu-install-5.4.50403-1.el9.noarch.rpm
 sudo dnf install -y --accept-eula ./amdgpu-install-5.4.50403-1.el9.noarch.rpm --opencl=rocr,legacy --vulkan=amdvlk,pro
@@ -51,7 +52,8 @@ sudo dnf install -y codium
 #Flatpak
 sudo dnf install -y flatpak
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-sudo flatpak install flathub com.spotify.Client
+flatpak install flathub com.spotify.Client
+flatpak install flathub org.inkscape.Inkscape
  #Requirements virtualbox guest additions
  dnf install tar bzip2 kernel-devel-$(uname -r) kernel-headers perl gcc make elfutils-libelf-devel 
 sudo reboot
