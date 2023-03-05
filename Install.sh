@@ -8,7 +8,7 @@ sudo echo 'max_parallel_downloads=10' >> /etc/dnf/dnf.conf
 #Requirements for fonts
 #dnf install -y rpm-build
 sudo dnf install -y ttmkfdir
-sudo dnf install -y curl cabextract xorg-x11-font-utils fontconfig
+sudo dnf install -y curl
 #Actual fonts
 sudo rpm -i https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm
 wget http://mirror.stream.centos.org/9-stream/AppStream/x86_64/os/Packages/google-noto-emoji-fonts-20200916-4.el9.noarch.rpm
