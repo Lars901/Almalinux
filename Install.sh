@@ -37,12 +37,12 @@ sudo dnf install -y edk2-ovmf
  sudo systemctl enable libvirtd
 
  #Beautiful Bash
- mkdir ~/GitHub/
- cd ~/GitHub/
+ mkdir ~/home/GitHub/
+ cd ~/home/GitHub/
  git clone https://github.com/christitustech/mybash
  cd mybash
  sudo chmod +x ./setup.sh
- ./setup.sh
+ sudo ./setup.sh
  
 #BraveBrowser
 sudo dnf install -y dnf-plugins-core
