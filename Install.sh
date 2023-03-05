@@ -29,21 +29,23 @@ sudo dnf -y groupinstall "KDE Plasma Workspaces" "base-x"
 sudo systemctl set-default graphical
 #Qemu
 sudo dnf makecache --refresh
-sudo dnf -y install edk2-ovmf
- sudo dnf install qemu-kvm qemu-img libvirt virt-manager virt-install virt-viewer libvirt-client
+sudo dnf install -y edk2-ovmf
+ sudo dnf install -y qemu-kvm qemu-img libvirt virt-manager virt-install virt-viewer libvirt-client
  sudo systemctl start libvirtd*
  sudo systemctl enable libvirtd
 
  #Beautiful Bash
  sudo mkdir ~/GitHub/
  cd ~/GitHub/
+ git clone https://github.com/christitustech/mybash
+ cd mybash
  sudo chmod +x ./setup.sh
  ./setup.sh
  #BraveBrowser
 sudo dnf install -y dnf-plugins-core
 sudo dnf config-manager --add-repo https://brave-browser-rpm-release.s3.brave.com/brave-browser.repo
 sudo rpm --import https://brave-browser-rpm-release.s3.brave.com/brave-core.asc
-sudo dnf install brave-browser
+sudo dnf install -y brave-browser
 
 #VSCodium
 sudo rpmkeys --import https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/-/raw/master/pub.gpg
@@ -53,8 +55,8 @@ sudo dnf install -y codium
 #Flatpak
 sudo dnf install -y flatpak
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-flatpak install flathub com.spotify.Client
-flatpak install flathub org.inkscape.Inkscape
+flatpak install -y flathub com.spotify.Client
+flatpak install -y flathub org.inkscape.Inkscape
  #Requirements virtualbox guest additions
- dnf install tar bzip2 kernel-devel-$(uname -r) kernel-headers perl gcc make elfutils-libelf-devel 
+ sudo dnf install -y tar bzip2 kernel-devel-$(uname -r) kernel-headers perl gcc make elfutils-libelf-devel 
 sudo reboot
