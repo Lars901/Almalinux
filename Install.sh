@@ -4,7 +4,6 @@ sudo dnf install -y wget
 sudo dnf install -y nano
 sudo dnf install gzip2 tar
 sudo echo 'defaultyes=True' >> /etc/dnf/dnf.conf
-sudo echo 'max_parallel_downloads=10' >> /etc/dnf/dnf.conf
 #Requirements for fonts
 #dnf install -y rpm-build
 sudo dnf install -y ttmkfdir
