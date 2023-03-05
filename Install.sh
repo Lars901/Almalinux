@@ -27,6 +27,12 @@ sudo systemctl set-default graphical
 sudo dnf makecache --refresh
 sudo dnf -y install edk2-ovmf
  sudo dnf install qemu-kvm qemu-img libvirt virt-manager virt-install virt-viewer libvirt-client
- sudo systemctl start libvirtd
+ sudo systemctl start libvirtd*
  sudo systemctl enable libvirtd
+
+ #Beautiful Bash
+ sudo mkdir ~/GitHub/
+ cd ~/GitHub/
+ sudo chmod +x ./setup.sh
+ ./setup.sh
 sudo reboot
