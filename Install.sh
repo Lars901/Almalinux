@@ -37,7 +37,7 @@ sudo dnf install -y edk2-ovmf
  sudo systemctl enable libvirtd
 
  #Beautiful Bash
- sudo mkdir ~/GitHub/
+ mkdir ~/GitHub/
  cd ~/GitHub/
  git clone https://github.com/christitustech/mybash
  cd mybash
