@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 sudo dnf -y install pciutils
-
 sudo dnf install -y wget
 #Requirements for fonts
 #dnf install -y rpm-build
