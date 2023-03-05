@@ -17,15 +17,18 @@ sudo mkdir ~/.config/fontsconfig
 sudo cp 01-emoji.conf ~/.config/fontconfig/conf.d/01-emoji.conf
 #LibreOffice
 sudo dnf install -y libreoffice-writer libreoffice-calc libreoffice-impress
-#Drivers
-wget https://repo.radeon.com/amdgpu-install/22.40.3/rhel/9.1/amdgpu-install-5.4.50403-1.el9.noarch.rpm
-sudo dnf install -y --accept-eula ./amdgpu-install-5.4.50403-1.el9.noarch.rpm --opencl=rocr,legacy --vulkan=amdvlk,pro
+
 #Install Kde Plasma
 sudo dnf -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.rpm
 sudo dnf update -y
 sudo dnf config-manager --set-enabled crb
 sudo dnf -y groupinstall "KDE Plasma Workspaces" "base-x"
 sudo systemctl set-default graphical
+
+#Drivers
+wget https://repo.radeon.com/amdgpu-install/22.40.3/rhel/9.1/amdgpu-install-5.4.50403-1.el9.noarch.rpm
+sudo dnf install -y --accept-eula ./amdgpu-install-5.4.50403-1.el9.noarch.rpm --opencl=rocr,legacy --vulkan=amdvlk,pro
+
 #Qemu
 sudo dnf makecache --refresh
 sudo dnf install -y edk2-ovmf
