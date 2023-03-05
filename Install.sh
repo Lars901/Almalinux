@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
+#Ensure user is part of sudo group
+sudo usermod -a -G Sudo $USER
  #Beautiful Bash
- mkdir Github
- cd Github
+ mkdir /home/$USER/Github
+ cd /home/$USER/Github
  git clone https://github.com/christitustech/mybash
  cd mybash
  sudo chmod +x ./setup.sh
