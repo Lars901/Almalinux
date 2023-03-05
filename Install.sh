@@ -1,4 +1,11 @@
 #!/usr/bin/env bash
+ #Beautiful Bash
+ mkdir Github
+ cd Github
+ git clone https://github.com/christitustech/mybash
+ cd mybash
+ sudo chmod +x ./setup.sh
+ sudo ./setup.sh
 sudo dnf -y install pciutils
 sudo dnf install -y wget
 sudo dnf install -y nano
@@ -34,15 +41,6 @@ sudo dnf install -y edk2-ovmf
  sudo dnf install -y qemu-kvm qemu-img libvirt virt-manager virt-install virt-viewer libvirt-client
  sudo systemctl start libvirtd*
  sudo systemctl enable libvirtd
-
- #Beautiful Bash
- mkdir ~/home/GitHub/
- cd ~/home/GitHub/
- git clone https://github.com/christitustech/mybash
- cd mybash
- sudo chmod +x ./setup.sh
- sudo ./setup.sh
- 
 #BraveBrowser
 sudo dnf install -y dnf-plugins-core
 sudo dnf config-manager --add-repo https://brave-browser-rpm-release.s3.brave.com/brave-browser.repo
