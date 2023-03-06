@@ -1,12 +1,11 @@
 #!/usr/bin/env bash
-#Ensure user is part of sudo group
-sudo usermod -a -G sudo wheel $USER
+
 sudo dnf -y install pciutils
 sudo dnf install -y wget
 sudo dnf install -y nano
-sudo dnf install gzip2 tar
+sudo dnf install tar
 sudo echo 'defaultyes=True' >> /etc/dnf/dnf.conf
-sudo echo 'export PATH=$PATH:/bin' >> ~/. bashrc
+sudo echo 'export PATH=$PATH:/bin' >> ~/.bashrc
 
 #Requirements for fonts
 #dnf install -y rpm-build
