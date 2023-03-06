@@ -13,7 +13,7 @@ sudo dnf install -y ttmkfdir
 sudo dnf install -y curl
 #Actual fonts
 sudo mkdir ~/.local/share/fonts
-sudo/usr/local/share/fonts/
+sudo mkdir /usr/local/share/fonts/
 sudo rpm -i https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm
 wget http://mirror.stream.centos.org/9-stream/AppStream/x86_64/os/Packages/google-noto-emoji-fonts-20200916-4.el9.noarch.rpm
 sudo dnf install -y google-noto-emoji-fonts
