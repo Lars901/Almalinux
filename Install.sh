@@ -14,7 +14,7 @@ sudo dnf install -y curl
 #Actual fonts
 sudo mkdir ~/.local/share/fonts
 sudo mkdir /usr/local/share/fonts/
-sudo rpm -i https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm
+sudo rpm -i https://downloads.sourceforge.net/project/mscorefonts2pms/msttcore-fonts-installer-2.6-1.noarch.rpm
 wget http://mirror.stream.centos.org/9-stream/AppStream/x86_64/os/Packages/google-noto-emoji-fonts-20200916-4.el9.noarch.rpm
 sudo dnf install -y google-noto-emoji-fonts
 sudo mkdir ~/.config/fontsconfig
@@ -25,7 +25,7 @@ cd Meslo
 mv *.ttf /usr/local/share/fonts/
 fc-cache /usr/local/share/fonts/
 #Beautiful Bash
-mkdir -p ~/.config
+sudo mkdir -p ~/.config
 touch ~/.config/starship.toml
 curl -sS https://starship.rs/install.sh | sh
 sudo echo 'eval "$(starship init bash)"' >> ~/.bashrc
