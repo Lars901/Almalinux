@@ -6,6 +6,7 @@ sudo dnf install -y wget
 sudo dnf install -y nano
 sudo dnf install gzip2 tar
 sudo echo 'defaultyes=True' >> /etc/dnf/dnf.conf
+sudo echo 'export PATH=$PATH:/bin' >> ~/. bashrc
 
 #Requirements for fonts
 #dnf install -y rpm-build
