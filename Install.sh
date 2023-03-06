@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #Ensure user is part of sudo group
-sudo usermod -aG sudo wheel $USER
+sudo usermod -a -G sudo wheel $USER
 sudo dnf -y install pciutils
 sudo dnf install -y wget
 sudo dnf install -y nano
