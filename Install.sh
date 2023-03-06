@@ -1,28 +1,37 @@
 #!/usr/bin/env bash
 #Ensure user is part of sudo group
-sudo usermod -a -G Sudo $USER
- #Beautiful Bash
- mkdir /home/$USER/Github
- cd /home/$USER/Github
- git clone https://github.com/christitustech/mybash
- cd mybash
- sudo chmod +x ./setup.sh
- sudo ./setup.sh
+sudo usermod -aG sudo wheel $USER
 sudo dnf -y install pciutils
 sudo dnf install -y wget
 sudo dnf install -y nano
 sudo dnf install gzip2 tar
 sudo echo 'defaultyes=True' >> /etc/dnf/dnf.conf
+
 #Requirements for fonts
 #dnf install -y rpm-build
 sudo dnf install -y ttmkfdir
 sudo dnf install -y curl
 #Actual fonts
+sudo mkdir ~/.local/share/fonts
+sudo/usr/local/share/fonts/
 sudo rpm -i https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm
 wget http://mirror.stream.centos.org/9-stream/AppStream/x86_64/os/Packages/google-noto-emoji-fonts-20200916-4.el9.noarch.rpm
 sudo dnf install -y google-noto-emoji-fonts
 sudo mkdir ~/.config/fontsconfig
 sudo cp 01-emoji.conf ~/.config/fontconfig/conf.d/01-emoji.conf
+wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.3.3/Meslo.zip
+tar -xvf Meslo.zip
+cd Meslo
+mv *.ttf /usr/local/share/fonts/
+fc-cache /usr/local/share/fonts/
+#Beautiful Bash
+mkdir -p ~/.config
+touch ~/.config/starship.toml
+curl -sS https://starship.rs/install.sh | sh
+sudo echo 'eval "$(starship init bash)"' >> ~/.bashrc
+#starship preset pastel-powerline > ~/.config/starship.toml
+starship preset tokyo-night > ~/.config/starship.toml
+
 #LibreOffice
 sudo dnf install -y libreoffice-writer libreoffice-calc libreoffice-impress
 
@@ -31,11 +40,11 @@ sudo dnf -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.
 sudo dnf update -y
 sudo dnf config-manager --set-enabled crb
 sudo dnf -y groupinstall "KDE Plasma Workspaces" "base-x"
-sudo systemctl set-default graphical
+sudo systemctlset-default graphical
 
 #Drivers
 wget https://repo.radeon.com/amdgpu-install/22.40.3/rhel/9.1/amdgpu-install-5.4.50403-1.el9.noarch.rpm
-sudo dnf install -y --accept-eula ./amdgpu-install-5.4.50403-1.el9.noarch.rpm --opencl=rocr,legacy --vulkan=amdvlk,pro
+#sudo dnf install -y --accept-eula ./amdgpu-install-5.4.50403-1.el9.noarch.rpm --opencl=rocr,legacy --vulkan=amdvlk,pro
 
 #Qemu
 sudo dnf makecache --refresh
@@ -59,6 +68,7 @@ sudo dnf install -y flatpak
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 flatpak install -y flathub com.spotify.Client
 flatpak install -y flathub org.inkscape.Inkscape
- #Requirements virtualbox guest additions
- sudo dnf install -y tar bzip2 kernel-devel-$(uname -r) kernel-headers perl gcc make elfutils-libelf-devel 
+ 
+#Requirements virtualbox guest additions
+sudo dnf install -y tar bzip2 kernel-devel-$(uname -r) kernel-headers perl gcc make elfutils-libelf-devel 
 sudo reboot
