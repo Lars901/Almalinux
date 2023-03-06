@@ -20,7 +20,8 @@ sudo dnf install -y google-noto-emoji-fonts
 sudo mkdir ~/.config/fontsconfig
 sudo cp 01-emoji.conf ~/.config/fontconfig/conf.d/01-emoji.conf
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.3.3/Meslo.zip
-unzip Meslo.zip
+mkdir /Meslo
+unzip Meslo.zip /Meslo
 fc-cache /usr/local/share/fonts/
 #Beautiful Bash
 sudo mkdir -p ~/.config
